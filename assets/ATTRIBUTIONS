@@ -1,0 +1,34 @@
+This project is licensed under the MIT License.
+See the LICENSE file in the project root for details.
+
+Copyright (c) 2024-2026 Florian Reuth <git@florianreuth.de>
+
+---
+
+videos/demo.mp3
+  Source: https://www.free-stock-music.com/
+  Title: "Motivate Me" by Mixaund
+  License: Free to use (non-commercial)
+
+videos/demo.mp4
+  Source: https://pixabay.com/videos/berg-natur-landschaft-%C3%B6sterreich-305657/
+  Author: tham_ms
+  License: Pixabay License (https://pixabay.com/service/license/)
+
+images/git.png
+  Author: Jason Long
+  License: CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
+  Modifications: Modified by Florian Reuth under same license
+
+images/html.png
+  Author: W3C
+  License: CC BY 3.0 (https://creativecommons.org/licenses/by/3.0/)
+
+images/css.png
+  Author: Javi Aguilar and The CSS-Next Community Group
+  Source: https://github.com/CSS-Next/logo.css/blob/main/css.svg
+  License: CC0 1.0 Public Domain Dedication — https://creativecommons.org/publicdomain/zero/1.0/
+
+images/watermark.png
+  Author: Unknown
+  License: CC0 (https://creativecommons.org/public-domain/zero/1.0/)

@@ -2,7 +2,7 @@
 This project is licensed under the MIT License.
 See the LICENSE file in the project root for details.
 
-Copyright (c) 2024-2025 FlorianMichael/EnZaXD <florian.michael07@gmail.com>
+Copyright (c) 2024-2026 Florian Reuth <git@florianreuth.de>
 -->
 
 <!DOCTYPE html>
@@ -13,109 +13,178 @@ Copyright (c) 2024-2025 FlorianMichael/EnZaXD <florian.michael07@gmail.com>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Git - Verteilte Versionsverwaltung</title>
 
-    <script src="shared/shared.js"></script>
+    <script src="js/shared.js"></script>
 
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <link rel="stylesheet" href="shared/shared.css">
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="css/shared.css">
 </head>
 
 <body>
-    <header>
-        <div class="button-container">
-            <button id="theme-toggle" class="action-button">Darkmode</button>
-            <button id="spin-toggle" class="action-button">Party modus</button>
-        </div>
+<header>
+    <div class="button-container">
+        <button id="theme-toggle" class="action-button"></button> <!-- Set via js/shared.js -->
+        <button id="spin-toggle" class="action-button"><kbd>Party Modus</kbd></button>
+    </div>
 
-        <nav>
-            <ul>
-                <li><a href="index.html">Java</a></li>
-                <li><a class="selected" href="git.html">Git</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Java</a></li>
+            <li><a class="selected" href="git.html">Git</a></li>
+            <li><a href="html.html">HTML & CSS</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-        <div class="content">
-            <h1>Git - Ein Tool für Versionskontrolle</h1>
+<main>
+    <article class="content">
+        <h1>Git - Ein Tool für Versionskontrolle</h1>
 
-            <div class="header">
-                <img  title="Jason Long, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons. &#013;Modified by EnZaXD under the same conditions." src="assets/git.png" alt="Git Logo" />
-                <div>
-                    <p>Git ist ein verteiltes Versionskontrollsystem, das ursprünglich von Linus Torvalds entwickelt
-                        wurde, um die Arbeit am Linux-Kernel zu verwalten. Seitdem hat Git sich als eine der
-                        beliebtesten Lösungen für die Versionsverwaltung durchgesetzt und wird von Millionen von
-                        Entwicklern weltweit verwendet. Es ermöglicht die Nachverfolgung von Änderungen im Code und
-                        fördert die Zusammenarbeit in Teams.</p>
-                    <p>Git unterstützt verschiedene Workflows und erlaubt Entwicklern, Änderungen rückgängig zu machen,
-                        verschiedene Versionen einer Software zu verwalten und bei Bedarf auf frühere Zustände
-                        zurückzukehren.</p>
-                </div>
-            </div>
-
+        <section class="header" id="introduction">
+            <figure style="margin:0">
+                <a href="assets/images/git.png" title="Git-Logo in voller Größe öffnen">
+                    <img title="Jason Long, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0>, via Wikimedia Commons. &#013;Modified by Florian Reuth under the same conditions."
+                         src="assets/images/git.png" alt="Git Logo"/>
+                </a>
+                <figcaption style="text-align:center">Git-Logo</figcaption>
+            </figure>
             <div>
-                <h2>Wichtige Konzepte in Git</h2>
-                <p>Git führt mehrere grundlegende Konzepte ein, die das Arbeiten mit Versionen von Dateien und Projekten
-                    ermöglichen:</p>
-                <ol>
-                    <li><strong>Repository (Repo)</strong> - Der zentrale Speicherort, in dem der gesamte Code und
-                        Verlauf eines Projekts gespeichert ist.</li>
-                    <li><strong>Commit</strong> - Eine Momentaufnahme von Änderungen, die einem Repository hinzugefügt
-                        werden und eine Nachricht enthalten, um den Zweck der Änderung zu beschreiben.</li>
-                    <li><strong>Branch</strong> - Ein separater Arbeitsbereich, der eine alternative Version eines
-                        Projekts darstellt und parallel zum Hauptcode bestehen kann.</li>
-                    <li><strong>Merge</strong> - Der Prozess, durch den Änderungen von einem Branch in einen anderen
-                        integriert werden.</li>
-                </ol>
-
-                <h2>Die Grundlagen der Git-Befehle</h2>
-                <p>Die folgende Tabelle listet einige der am häufigsten verwendeten Git-Befehle und ihre Funktionen
-                    auf:</p>
-
-                <table>
-                    <tr>
-                        <th>Befehl</th>
-                        <th>Funktion</th>
-                        <th>Beispiel</th>
-                    </tr>
-                    <tr>
-                        <td><strong>git init</strong></td>
-                        <td>Erstellt ein neues, leeres Git-Repository im aktuellen Verzeichnis.</td>
-                        <td><code>git init</code></td>
-                    </tr>
-                    <tr>
-                        <td><strong>git clone</strong></td>
-                        <td>Kopiert ein bestehendes Repository in ein neues Verzeichnis.</td>
-                        <td><code>git clone &lt;URL&gt;</code></td>
-                    </tr>
-                    <tr>
-                        <td><strong>git add</strong></td>
-                        <td>Fügt Änderungen der Staging-Area hinzu und bereitet sie auf den nächsten Commit vor.</td>
-                        <td><code>git add &lt;Datei&gt;</code></td>
-                    </tr>
-                    <tr>
-                        <td><strong>git commit</strong></td>
-                        <td>Speichert die Änderungen in das Repository mit einer Nachricht, die die Änderungen beschreibt.</td>
-                        <td><code>git commit -m "Nachricht"</code></td>
-                    </tr>
-                    <tr>
-                        <td><strong>git status</strong></td>
-                        <td>Zeigt den aktuellen Status des Repositories an, einschließlich uncommitted Änderungen.</td>
-                        <td><code>git status</code></td>
-                    </tr>
-                    <tr>
-                        <td><strong>git log</strong></td>
-                        <td>Zeigt eine Historie der Commits im Repository an.</td>
-                        <td><code>git log</code></td>
-                    </tr>
-                </table>
+                <p>Git ist ein verteiltes Versionskontrollsystem, das ursprünglich von <dfn>Linus Torvalds</dfn>
+                    entwickelt wurde, um die Arbeit am Linux-Kernel zu verwalten. Seitdem hat Git sich als eine der
+                    beliebtesten Lösungen für die Versionsverwaltung durchgesetzt und wird von Millionen von Entwicklern
+                    weltweit verwendet. Es ermöglicht die Nachverfolgung von Änderungen im Code und fördert die
+                    Zusammenarbeit in Teams.</p>
+                <p>Git unterstützt verschiedene Workflows und erlaubt Entwicklern, Änderungen rückgängig zu machen,
+                    verschiedene Versionen einer Software zu verwalten und bei Bedarf auf frühere Zustände
+                    zurückzukehren.</p>
             </div>
-        </div>
-    </main>
-	
-    <footer>
-        <p>Copyright © 2024-2025 FlorianMichael/EnZaXD.</p>
-    </footer>
+        </section>
+
+        <section aria-labelledby="toc">
+            <h2 id="toc">Inhaltsverzeichnis</h2>
+            <ul>
+                <li><a href="#concepts">Wichtige Konzepte</a></li>
+                <li><a href="#commands">Grundlegende Befehle</a></li>
+                <li><a href="#comparison">Bereiche</a></li>
+                <li><a href="#note">Hinweisbox</a></li>
+            </ul>
+        </section>
+
+        <section id="concepts">
+            <h2>Wichtige Konzepte in Git</h2>
+            <p>Git führt mehrere grundlegende Konzepte ein, die das Arbeiten mit Versionen von Dateien und Projekten
+                ermöglichen:</p>
+            <ol>
+                <li><strong>Repository (<abbr title="Repository">Repo</abbr>)</strong> - Der zentrale Speicherort, in
+                    dem der gesamte Code und Verlauf eines Projekts gespeichert ist.
+                </li>
+                <li><strong>Commit</strong> - Eine Momentaufnahme von Änderungen, die einem Repository hinzugefügt
+                    werden und eine Nachricht enthalten, um den Zweck der Änderung zu beschreiben.
+                </li>
+                <li><strong>Branch</strong> - Ein separater Arbeitsbereich, der eine alternative Version eines Projekts
+                    darstellt und parallel zum Hauptcode bestehen kann.
+                </li>
+                <li><strong>Merge</strong> - Der Prozess, durch den Änderungen von einem Branch in einen anderen
+                    integriert werden.
+                </li>
+            </ol>
+
+            <dl>
+                <dt>Remote</dt>
+                <dd>Ein externer Speicherort eines Repositories (z. B. auf GitHub oder GitLab).</dd>
+                <dt>Staging-Area</dt>
+                <dd>Zwischenbereich, in dem Änderungen gesammelt werden, bevor sie committet werden.</dd>
+            </dl>
+            <p style="text-align:right; font-style:italic">Mehr Informationen: <a href="https://git-scm.com/" target="_blank"
+                                                                          rel="noopener">git-scm.com</a></p>
+        </section>
+
+        <section id="commands">
+            <h2>Die Grundlagen der Git-Befehle</h2>
+            <p>Die folgende Tabelle listet einige der am häufigsten verwendeten Git-Befehle und ihre Funktionen auf:</p>
+
+            <table>
+                <tr>
+                    <th>Befehl</th>
+                    <th>Funktion</th>
+                    <th>Beispiel</th>
+                </tr>
+                <tr>
+                    <td><var>git init</var></td>
+                    <td>Erstellt ein neues, leeres Git-Repository im aktuellen Verzeichnis.</td>
+                    <td><code>git init</code></td>
+                </tr>
+                <tr>
+                    <td><var>git clone</var></td>
+                    <td>Kopiert ein bestehendes Repository in ein neues Verzeichnis.</td>
+                    <td><code>git clone &lt;URL&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><var>git add</var></td>
+                    <td>Fügt Änderungen der Staging-Area hinzu und bereitet sie auf den nächsten Commit vor.</td>
+                    <td><code>git add &lt;Datei&gt;</code></td>
+                </tr>
+                <tr>
+                    <td><var>git commit</var></td>
+                    <td>Speichert die Änderungen in das Repository mit einer Nachricht, die die Änderungen beschreibt.
+                    </td>
+                    <td><code>git commit -m "Nachricht"</code></td>
+                </tr>
+                <tr>
+                    <td><var>git status</var></td>
+                    <td>Zeigt den aktuellen Status des Repositories an, einschließlich uncommitted Änderungen.</td>
+                    <td><code>git status</code></td>
+                </tr>
+                <tr>
+                    <td><var>git log</var></td>
+                    <td>Zeigt eine Historie der Commits im Repository an.</td>
+                    <td><code>git log</code></td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="comparison">
+            <h2>Bereiche</h2>
+            <p>Ein kurzer Vergleich verbreiteter Bereiche in Git (mit verbundenen Spalten/Zeilen):</p>
+            <table>
+                <tr>
+                    <th colspan="2">Arbeitsbereiche</th>
+                    <th>Beschreibung</th>
+                </tr>
+                <tr>
+                    <td rowspan="2"><strong>Lokaler Bereich</strong></td>
+                    <td>Working Directory</td>
+                    <td>Dateien, an denen aktuell gearbeitet wird.</td>
+                </tr>
+                <tr>
+                    <td>Staging-Area</td>
+                    <td>Zwischenspeicher für Änderungen vor dem Commit.</td>
+                </tr>
+                <tr>
+                    <td colspan="2"><strong>Repository</strong></td>
+                    <td>Versionierte Historie der Commits (lokal oder remote).</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="note" aria-label="Hinweis">
+            <h2>Hinweis</h2>
+            <aside style="border:1px solid #666; padding:12px; border-radius:6px; background:#1e1e1e;">
+                <p style="margin:0 0 8px 0"><strong>Tipp:</strong> Verwende eine <em>.gitignore</em>, um generierte
+                    Dateien vom Tracking auszuschließen.</p>
+                <blockquote cite="https://git-scm.com/docs/gitignore" style="margin:0">
+                    <p>"A line starting with ‘#’ serves as a comment."
+                        — <a href="https://git-scm.com/docs/gitignore" target="_blank" rel="noopener">gitignore-Dokumentation</a>
+                    </p>
+                </blockquote>
+            </aside>
+        </section>
+    </article>
+</main>
+
+<footer>
+    <p>Copyright © 2024-2026 Florian Reuth.</p>
+</footer>
 </body>
 
 </html>

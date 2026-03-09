@@ -1,0 +1,505 @@
+<!--
+This project is licensed under the MIT License.
+See the LICENSE file in the project root for details.
+
+Copyright (c) 2024-2026 Florian Reuth <git@florianreuth.de>
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS</title>
+
+    <script src="js/shared.js"></script>
+
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="css/shared.css">
+    <link rel="stylesheet" href="css/html.css">
+</head>
+
+<body>
+<header>
+    <div class="button-container">
+        <button id="theme-toggle" class="action-button"></button> <!-- Set via js/shared.js -->
+        <button id="spin-toggle" class="action-button"><kbd>Party Modus</kbd></button>
+    </div>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Java</a></li>
+            <li><a href="git.html">Git</a></li>
+            <li><a class="selected" href="html.html">HTML & CSS</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <article class="content">
+        <h1>HTML & CSS</h1>
+
+        <section class="header">
+            <img title="W3C, CC BY 3.0 <https://creativecommons.org/licenses/by/3.0/>, via Wikimedia Commons"
+                 src="assets/images/html.png" alt="HTML & CSS Logo"/>
+            <div>
+                <p>HTML wurde 1991 von <dfn>Tim Berners-Lee</dfn> entwickelt, um Webseiten im Internet zu strukturieren.
+                    CSS wurde 1996 eingeführt, um Layout und Design von Webseiten unabhängig vom Inhalt zu gestalten.
+                    Seitdem bilden HTML und CSS die Grundlage des modernen Webs und haben sich kontinuierlich
+                    weiterentwickelt, um neue Features und Designmöglichkeiten zu bieten.</p>
+                <p>Mit HTML & CSS lassen sich Inhalte semantisch strukturieren, multimediale Elemente einbinden,
+                    Formulare erstellen und interaktive Webseiten gestalten. Dieses Kapitel zeigt praktisch alle
+                    wichtigen Features und Techniken, die Entwickler heute verwenden können.</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Text & Semantik</h2>
+            <p><strong>Stark</strong>, <em>Kursiv</em>, <u>Unterstrichen</u>,
+                <del>Durchgestrichen</del>
+                ,
+                <mark>Markiert</mark>
+            </p>
+            <p>Abkürzungen: <abbr title="HyperText Markup Language">HTML</abbr>, <abbr title="Cascading Style Sheets">CSS</abbr>
+            </p>
+            <p>Definition: <dfn>Viewport</dfn> - Der sichtbare Bereich einer Webseite.</p>
+            <blockquote cite="https://www.w3.org/TR/html52/">
+                Blockquote Beispiel: "Dies ist ein hervorgehobenes Zitat."<br>
+                <cite>— HTML Spezifikation (W3C)</cite>
+            </blockquote>
+            <p>Inline-Zitat mit <code>&lt;q&gt;</code>: <q cite="https://developer.mozilla.org/">Kurze, inline gesetzte
+                Zitate</q>.</p>
+            <p>Inline Code: <code>console.log("Hello World")</code></p>
+            <p>Tastatur: <kbd>Ctrl + C</kbd>, Variablen: <var>x</var> = 10</p>
+
+            <h3>Typografie & Ausrichtung</h3>
+            <p class="font-small">Kleiner Text (Schriftgröße)</p>
+            <p class="font-large font-fancy">Großer Text in anderer Schriftart</p>
+            <p class="color-accent">Text in anderer Farbe</p>
+            <p class="align-left">Links bündig ausgerichteter Text</p>
+            <p class="align-center">Zentriert ausgerichteter Text</p>
+            <p class="align-right">Rechts bündig ausgerichteter Text</p>
+        </section>
+
+        <section>
+            <h2>Zitate</h2>
+
+            <h3>q – Zitate im Fließtext</h3>
+            <p>Mit Quellenangabe per <code>cite</code>-Attribut:
+                <q cite="https://www.destatis.de/DE/PresseService/Presse/Pressemitteilungen/2012/07/PD12_255_12411.html">stieg
+                    […] die Einwohnerzahl Deutschlands im Vergleich zum Vorjahr um 92&nbsp;000 Personen (+ 0,1&nbsp;%)
+                    auf
+                    mehr als 81,8&nbsp;Millionen.</q>
+            </p>
+
+            <h4>Sprachabhängige Anführungszeichen</h4>
+            <div class="quotes-lang">
+                <p lang="en">Martin Luther King said: <q>I have a dream!</q></p>
+                <p lang="de">Martin Luther King sagte: <q>Ich habe einen Traum!</q></p>
+            </div>
+
+            <h4>Anführungszeichen mit CSS <code>quotes</code> festlegen</h4>
+            <div class="quotes-custom">
+                <p><q>Dies ist ein Zitat.</q></p>
+                <p><q>Dies ist ein <q>Zitat</q> innerhalb eines Zitats.</q></p>
+            </div>
+
+            <h3>blockquote</h3>
+            <div class="blockquote-basic">
+                <blockquote cite="https://www.w3.org/TR/html52/">
+                    Klarheit ist, wenn man so will, nur die anschaulichere Variante der Wahrheit.
+                </blockquote>
+                <cite>— Brigitte Beispiel</cite>
+            </div>
+
+            <h4>Blockzitat mit Zierelementen (SVG in Pseudoelementen)</h4>
+            <div class="blockquote-ornament">
+                <blockquote lang="de">
+                    Die Krähen behaupten, eine einzige Krähe könne den Himmel zerstören; das ist zweifellos,
+                    beweist aber nichts gegen den Himmel, denn Himmel bedeutet eben: Unmöglichkeit von Krähen.
+                    <cite>— Franz Kafka</cite>
+                </blockquote>
+            </div>
+
+            <h3>Hängende Interpunktion</h3>
+            <div class="hanging-punctuation">
+                <p>Fülltext</p>
+                <blockquote>
+                    <p>Zitat</p>
+                    <p><cite>Autor</cite></p>
+                </blockquote>
+                <p>Fülltext</p>
+            </div>
+        </section>
+
+        <section>
+            <h2>Tooltips mit title</h2>
+            <h3>Einfacher Tooltip mit <code>title</code></h3>
+            <h4 title="Auch Überschriften können ein title‑Attribut haben. Bei langer Länge umbrechen Browser automatisch.">
+                Demo: Überschrift mit Tooltip
+            </h4>
+            <p>
+                <img src="assets/images/html.png" title="Das ist ein Bild mit Tooltip." alt="HTML & CSS Logo"
+                     style="max-width:120px; height:auto;">
+            </p>
+            <p>Text <abbr title="Abkürzung">Abk.</abbr> Text.</p>
+            <p><dfn title="Definition">Begriff</dfn></p>
+            <p><a title="Externer Link" href="https://wiki.selfhtml.org">Link</a></p>
+            <p>
+                <q>Mehr dazu im
+                    <cite title="Quellenangabe">
+                        <a href="https://wiki.selfhtml.org">SELFHTML‑Wiki</a>
+                    </cite>
+                </q>
+            </p>
+
+            <h3>Elemente für Tooltips</h3>
+            <h4>Abkürzungen mit <code>abbr</code></h4>
+            <p>Text <abbr title="Abkürzung">Abk.</abbr> Text.</p>
+            <p><abbr lang="en" title="Intergovernmental Panel for Climate Change">IPCC</abbr></p>
+
+            <h4>Definitionen mit <code>dfn</code></h4>
+            <p><dfn>Definition</dfn></p>
+            <p>… <dfn id="Definition">Definition</dfn> … <a href="#Definition">Sprung</a></p>
+            <dl>
+                <dt>
+                    <dfn>
+                        <abbr title="World‑Wide Web">WWW</abbr>
+                    </dfn>
+                </dt>
+                <dd>Beschreibung</dd>
+            </dl>
+
+            <h3>Barrierefreiheit: ARIA‑Tooltip (Markup‑Beispiel)</h3>
+            <div class="text">
+                <label id="tp1-label" for="first">Vorname:</label>
+                <input type="text" id="first" name="first" size="20"
+                       aria-labelledby="tp1-label"
+                       aria-describedby="tp1"
+                       aria-required="false"/>
+                <div id="tp1" class="tooltip" role="tooltip" aria-hidden="true">
+                    Your first name is optional
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Listen & Tabellen</h2>
+
+            <h3>Ungeordnete Listen</h3>
+            <ul>
+                <li>Hauptpunkt A
+                    <ul>
+                        <li>Unterpunkt A1</li>
+                        <li>Unterpunkt A2</li>
+                    </ul>
+                </li>
+                <li>Hauptpunkt B</li>
+            </ul>
+
+            <h3>Geordnete Listen</h3>
+            <ol>
+                <li>Schritt 1</li>
+                <li>Schritt 2
+                    <ol type="a">
+                        <li>Unterpunkt a</li>
+                        <li>Unterpunkt b</li>
+                    </ol>
+                </li>
+                <li>Schritt 3</li>
+            </ol>
+
+            <h3>Definitionsliste</h3>
+            <dl>
+                <dt>HTML</dt>
+                <dd>HyperText Markup Language – Grundlage des Webs.</dd>
+                <dt>CSS</dt>
+                <dd>Cascading Style Sheets – für Layout und Design.</dd>
+                <dt>JS</dt>
+                <dd>JavaScript – für Interaktivität und dynamische Inhalte.</dd>
+            </dl>
+
+            <h3>Einfache Tabelle</h3>
+            <table>
+                <caption>Teammitglieder</caption>
+                <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Alter</th>
+                    <th>Position</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>Anna</td>
+                    <td>25</td>
+                    <td>Entwicklerin</td>
+                </tr>
+                <tr>
+                    <td>Max</td>
+                    <td>30</td>
+                    <td>Designer</td>
+                </tr>
+                <tr>
+                    <td>Lisa</td>
+                    <td>28</td>
+                    <td>Projektmanagerin</td>
+                </tr>
+                </tbody>
+                <tfoot>
+                <tr>
+                    <td colspan="3">Ende der Tabelle</td>
+                </tr>
+                </tfoot>
+            </table>
+
+            <h3>Gestreifte Tabelle</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Produkt</th>
+                    <th>Preis</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr style="background-color:#1e1e1e;">
+                    <td>1</td>
+                    <td>Buch</td>
+                    <td>15€</td>
+                </tr>
+                <tr style="background-color:#2a2a2a;">
+                    <td>2</td>
+                    <td>Tasse</td>
+                    <td>7€</td>
+                </tr>
+                <tr style="background-color:#1e1e1e;">
+                    <td>3</td>
+                    <td>T-Shirt</td>
+                    <td>20€</td>
+                </tr>
+                </tbody>
+            </table>
+
+            <h3>Tabelle mit verbundenen Zellen</h3>
+            <table>
+                <thead>
+                <tr>
+                    <th>Kategorie</th>
+                    <th>Produkt</th>
+                    <th>Menge</th>
+                    <th>Preis</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td rowspan="2">Getränke</td>
+                    <td>Kaffee</td>
+                    <td>2</td>
+                    <td>6€</td>
+                </tr>
+                <tr>
+                    <td>Tee</td>
+                    <td>1</td>
+                    <td>3€</td>
+                </tr>
+                <tr>
+                    <td>Snacks</td>
+                    <td colspan="3">Gemischte Kekse (Pauschalpreis)</td>
+                </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Bilder & Medien</h2>
+            <figure>
+                <img src="assets/images/css.png"
+                     alt="CSS-Logo"
+                     style="width:200px;"
+                     title="CSS Logo: Javi Aguilar & The CSS-Next Community Group, CC0 1.0 via GitHub">
+                <figcaption>Grafik mit Alternativtext und Beschriftung</figcaption>
+            </figure>
+
+            <figure>
+                <video controls width="250"
+                       title="Video: 'Berg Natur Landschaft Österreich' by tham_ms (Pixabay License)">
+                    <source src="assets/videos/demo.mp4" type="video/mp4">
+                    Video wird nicht unterstützt.
+                </video>
+                <figcaption>Beispielvideo mit Beschriftung</figcaption>
+            </figure>
+
+            <figure>
+                <audio controls
+                       title="Audio: 'Motivate Me' by Mixaund, from free-stock-music.com">
+                    <source src="assets/videos/demo.mp3" type="audio/mpeg">
+                    Audio wird nicht unterstützt.
+                </audio>
+                <figcaption>Beispielaudio mit Beschriftung</figcaption>
+            </figure>
+            <canvas id="canvas-demo" width="200" height="100" style="border:1px solid black;"></canvas>
+
+            <h3>Anordnung von Grafiken</h3>
+            <div class="clearfix">
+                <img src="assets/images/html.png" alt="HTML-Logo links" class="float-img float-left" title="HTML Logo">
+                <img src="assets/images/git.png" alt="Git-Logo rechts" class="float-img float-right" title="Git Logo">
+                <p>
+                    Dieser Absatz umfließt zwei Bilder, die links und rechts angeordnet sind. So lassen sich Texte
+                    und Bilder abwechslungsreich kombinieren und layouten.
+                </p>
+            </div>
+
+            <div class="figure-row">
+                <figure>
+                    <img src="assets/images/watermark.png" alt="Wasserzeichen" style="width:120px;">
+                    <figcaption>Zentriert in einer Flex-Reihe</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/images/html.png" alt="HTML Logo klein" style="width:120px;">
+                    <figcaption>Gleiche Höhe, unterschiedliche Motive</figcaption>
+                </figure>
+                <figure>
+                    <img src="assets/images/git.png" alt="Git Logo klein" style="width:120px;">
+                    <figcaption>Nebeneinander angeordnet</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section>
+            <h2>Formulare & Eingaben</h2>
+            <form>
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Dein Name"><br><br>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email"><br><br>
+
+                <label for="password">Passwort:</label>
+                <input type="password" id="password" name="password"><br><br>
+
+                <label>Geschlecht:</label>
+                <input type="radio" name="gender" value="male">M
+                <input type="radio" name="gender" value="female">F<br><br>
+
+                <label>Hobbys:</label>
+                <input type="checkbox" name="hobby" value="coding">Coding
+                <input type="checkbox" name="hobby" value="music">Music<br><br>
+
+                <label for="bio">Bio:</label><br>
+                <textarea id="bio" name="bio"></textarea><br><br>
+
+                <label for="color">Lieblingsfarbe:</label>
+                <input type="color" id="color" name="color"><br><br>
+
+                <label for="date">Geburtsdatum:</label>
+                <input type="date" id="date" name="date"><br><br>
+
+                <label for="range">Skala:</label>
+                <input type="range" id="range" name="range" min="0" max="100"><br><br>
+
+                <select>
+                    <option>Option 1</option>
+                    <option>Option 2</option>
+                </select><br><br>
+
+                <button type="submit">Absenden</button>
+                <button type="button" title="Button mit Grafik">
+                    <img src="assets/images/html.png" alt="Icon" style="width:16px;height:16px;vertical-align:middle;">
+                    Icon-Button
+                </button>
+            </form>
+        </section>
+
+        <section>
+            <h2>CSS-Demos</h2>
+
+            <h3>Flexbox</h3>
+            <div class="flex-demo">
+                <div>Item 1</div>
+                <div>Item 2</div>
+                <div>Item 3</div>
+            </div>
+
+            <h3>Grid</h3>
+            <div class="grid-demo">
+                <div>1</div>
+                <div>2</div>
+                <div>3</div>
+                <div>4</div>
+                <div>5</div>
+                <div>6</div>
+            </div>
+
+            <h3>Animation & Transformation</h3>
+            <div class="animation-demo transform-demo">Hover mich</div>
+
+            <h3>Pseudo-Elemente</h3>
+            <p class="pseudo-demo">Text mit Sternen</p>
+
+            <h3>Farben & Hintergründe</h3>
+            <div class="color-demo" style="background:red;"></div>
+            <div class="color-demo" style="background:green;"></div>
+            <div class="color-demo" style="background:blue;"></div>
+        </section>
+
+        <section>
+            <h2>Interaktive Details</h2>
+            <details>
+                <summary>Mehr Infos anzeigen</summary>
+                <p>Hier verbirgt sich zusätzlicher Inhalt, der nur bei Klick sichtbar wird.</p>
+            </details>
+        </section>
+
+        <section>
+            <h2>Hyperlinks & Downloads</h2>
+            <ul>
+                <li>Externe Seite: <a href="https://developer.mozilla.org/" target="_blank" rel="noopener">MDN Web
+                    Docs</a></li>
+                <li>Interner Link (zu dieser Seite): <a href="#formulare">Zum Formularbereich springen</a></li>
+                <li>E-Mail mit Zusatzangaben: <a
+                        href="mailto:example@example.com?subject=Anfrage%20zur%20Webseite&body=Hallo%20Team,%0D%0Aich%20habe%20eine%20Frage.&cc=info@example.com&bcc=privacy@example.com">E-Mail
+                    schreiben</a></li>
+                <li>Bild als Link: <a href="assets/images/css.png" target="_blank"><img src="assets/images/css.png"
+                                                                                        alt="Bildlink Vorschau"
+                                                                                        style="width:48px;height:48px;"></a>
+                </li>
+                <li>Datei zum Download: <a href="README.md" download>README herunterladen</a> oder <a href="LICENSE"
+                                                                                                      download>Lizenz
+                    herunterladen</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Infoboxen</h2>
+            <div class="infobox info">
+                <strong>Info:</strong> Diese Box liefert zusätzliche Informationen.
+            </div>
+            <div class="infobox warn">
+                <strong>Warnung:</strong> Achten Sie auf korrekte Verlinkungen und Alternativtexte.
+            </div>
+            <div class="infobox note">
+                <strong>Hinweis:</strong> Das Favicon ist in dieser Seite bereits eingebunden.
+            </div>
+        </section>
+
+    </article>
+</main>
+
+<footer>
+    <p>Copyright © 2024-2026 Florian Reuth.</p>
+</footer>
+
+<script>
+    const canvas = document.getElementById('canvas-demo');
+    const ctx = canvas.getContext('2d');
+    ctx.fillStyle = "orange";
+    ctx.fillRect(10, 10, 180, 80);
+    ctx.strokeStyle = "black";
+    ctx.strokeRect(10, 10, 180, 80);
+</script>
+</body>
+
+</html>

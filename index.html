@@ -2,7 +2,7 @@
 This project is licensed under the MIT License.
 See the LICENSE file in the project root for details.
 
-Copyright (c) 2024-2025 FlorianMichael/EnZaXD <florian.michael07@gmail.com>
+Copyright (c) 2024-2026 Florian Reuth <git@florianreuth.de>
 -->
 
 <!DOCTYPE html>
@@ -13,176 +13,211 @@ Copyright (c) 2024-2025 FlorianMichael/EnZaXD <florian.michael07@gmail.com>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Java - Die vielseitigste Programmiersprache der Welt</title>
 
+    <!-- https://github.com/highlightjs/highlight.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/highlight.min.js"
-        integrity="sha512-rdhY3cbXURo13l/WU9VlaRyaIYeJ/KBakckXIvJNAQde8DgpOmE+eZf7ha4vdqVjTtwQt69bD2wH2LXob/LB7Q=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+            integrity="sha512-rdhY3cbXURo13l/WU9VlaRyaIYeJ/KBakckXIvJNAQde8DgpOmE+eZf7ha4vdqVjTtwQt69bD2wH2LXob/LB7Q=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="js/shared.js"></script>
+    <script src="js/index.js"></script>
 
-    <script src="shared/shared.js"></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            hljs.highlightAll();
-        });
-    </script>
-
+    <!-- https://github.com/highlightjs/highlight.js -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.8.0/styles/agate.min.css"
-        integrity="sha512-wI7oXtzNHj/bqfLA3P6x3XYbcwzsnIKaPLfjjX8ZAXhc65+kSI6sh8gLOOByOKImokAjHUQR0xAJQ/xZTzwuOA=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <link rel="stylesheet" href="shared/shared.css">
+          integrity="sha512-wI7oXtzNHj/bqfLA3P6x3XYbcwzsnIKaPLfjjX8ZAXhc65+kSI6sh8gLOOByOKImokAjHUQR0xAJQ/xZTzwuOA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer"/>
+    <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
+    <link rel="stylesheet" href="css/shared.css">
 </head>
 
-<body>
-    <header>
-        <div class="button-container">
-            <button id="theme-toggle" class="action-button">Darkmode</button>
-            <button id="spin-toggle" class="action-button">Party modus</button>
-        </div>
+<body id="top">
+<header>
+    <div class="button-container">
+        <button id="theme-toggle" class="action-button"></button> <!-- Set via js/shared.js -->
+        <button id="spin-toggle" class="action-button"><kbd>Party Modus</kbd></button>
+    </div>
 
-        <nav>
-            <ul>
-                <li><a class="selected" href="index.html">Java</a></li>
-                <li><a href="git.html">Git</a></li>
-                <li><a href="contact.html">Kontakt</a></li>
-            </ul>
-        </nav>
-    </header>
+    <nav>
+        <ul>
+            <li><a class="selected" href="index.html">Java</a></li>
+            <li><a href="git.html">Git</a></li>
+            <li><a href="html.html">HTML & CSS</a></li>
+            <li><a href="contact.html">Kontakt</a></li>
+        </ul>
+    </nav>
+</header>
 
-    <main>
-        <div class="content">
-            <h1>Java - Eine Allzweckprogrammiersprache</h1>
+<main>
+    <article class="content">
+        <h1>Java - Eine Allzweckprogrammiersprache</h1>
 
-            <div class="header">
-                <img title="Unknown, CC-0 &lt;https://creativecommons.org/public-domain/cc0/&gt;, via Wikimedia Commons" src="assets/watermark.png" alt="Java Watermark">
-                <div>
-                    <p>Java ist eine universelle, objektorientierte Programmiersprache, die ursprünglich von Sun
-                        Microsystems im
-                        Jahr 1995 entwickelt wurde und heute von Oracle weitergeführt wird. Mit der Philosophie "Write
-                        Once, Run
-                        Anywhere" bietet Java eine plattformunabhängige Lösung, die auf Millionen von Geräten und in
-                        nahezu
-                        allen Bereichen der Softwareentwicklung verwendet wird. Bekannte Unternehmen wie <a
+        <section class="header" id="introduction">
+            <figure style="margin:0">
+                <a href="assets/images/watermark.png" title="Bild in voller Größe öffnen">
+                    <img title="Unknown, CC-0 &lt;https://creativecommons.org/public-domain/cc0/&gt;, via Wikimedia Commons"
+                         src="assets/images/watermark.png" alt="Java Watermark" style="width:auto; height:auto;">
+                </a>
+                <figcaption style="text-align:center">Java-Logo</figcaption>
+            </figure>
+            <div>
+                <p>Java ist eine universelle, objektorientierte Programmiersprache, die ursprünglich von <dfn
+                        title="Sun Microsystems">Sun Microsystems</dfn> im Jahr 1995 entwickelt wurde und heute von
+                    <abbr title="Oracle Corporation">Oracle</abbr> weitergeführt wird. Mit der Philosophie "Write Once,
+                    Run Anywhere" bietet Java eine plattformunabhängige Lösung, die auf Millionen von Geräten und in
+                    nahezu allen Bereichen der Softwareentwicklung verwendet wird. Bekannte Unternehmen wie <a
                             href="https://www.google.de/">Google</a>, <a href="https://www.amazon.de/">Amazon</a> und <a
                             href="https://www.netflix.com/">Netflix</a> setzen Java in großem Umfang ein.</p>
+                <blockquote>
                     <p>Eines der bekanntesten Projekte, die mit Java entwickelt wurden, ist das weltweit erfolgreiche
                         Spiel <a href="https://www.minecraft.net/">Minecraft</a>.</p>
-                </div>
+                </blockquote>
+            </div>
+        </section>
+
+        <section aria-labelledby="toc">
+            <h2 id="toc">Inhaltsverzeichnis</h2>
+            <ul>
+                <li><a href="#java">Die Java-Technologie</a></li>
+                <li><a href="#jdk">JDK</a></li>
+                <li><a href="#jre">JRE</a></li>
+                <li><a href="#jvm">JVM</a></li>
+                <li><a href="#examples">Java in Aktion</a></li>
+            </ul>
+        </section>
+
+        <section id="java">
+            <h2>Die Java-Technologie</h2>
+            <p>Java besteht aus mehreren wichtigen Komponenten, die zusammen die Entwicklungs- und Laufzeitumgebung
+                ausmachen:</p>
+            <ol>
+                <li><strong>JDK</strong> - Java Development Kit (Entwicklungswerkzeuge)</li>
+                <li><strong>JRE</strong> - Java Runtime Environment (Laufzeitumgebung)</li>
+                <li><strong>JVM</strong> - Java Virtual Machine (Virtuelle Maschine für Bytecode-Ausführung)</li>
+            </ol>
+        </section>
+
+        <section id="jdk">
+            <h2>JDK – Das Herzstück der Java-Entwicklung</h2>
+            <p>Das Java Development Kit (JDK) ist nicht nur eine Sammlung von Entwicklungswerkzeugen, sondern auch die
+                Grundlage für jede Java-Entwicklung. Es enthält den Compiler, Debugger, sowie zahlreiche andere
+                Tools.</p>
+
+            <table>
+                <tr>
+                    <th>Werkzeug</th>
+                    <th>Funktion</th>
+                    <th>Implementiert in/seit</th>
+                </tr>
+                <tr>
+                    <td><strong>Java Compiler (<var>javac</var>)</strong></td>
+                    <td>Der Compiler übersetzt Java-Code in Bytecode, der von der JVM ausgeführt wird. Dadurch können
+                        Java-Programme auf verschiedenen Plattformen ohne Änderungen ausgeführt werden.
+                    </td>
+                    <td>JDK - Version 1.0 (Fundamental)</td>
+                </tr>
+                <tr>
+                    <td><strong>Java Debugger (<var>jdb</var>)</strong></td>
+                    <td>Das Debugging-Tool hilft Entwicklern dabei, Fehler im Code zu finden und zu beheben. Es
+                        unterstützt auch Remote-Debugging für komplexe Anwendungen.
+                    </td>
+                    <td>JDK - Version 1.3</td>
+                </tr>
+            </table>
+        </section>
+
+        <section id="jre">
+            <h2>JRE – Laufzeitumgebung für Benutzer</h2>
+            <p>Die Java Runtime Environment (JRE) stellt die notwendige Umgebung zur Verfügung, damit Java-Anwendungen
+                auf einem Benutzergerät ausgeführt werden können. Sie enthält die Java-Bibliotheken und die JVM, welche
+                den Java-Bytecode in Maschinensprache umwandelt. Benutzer benötigen die JRE, um Java-Programme zu
+                starten, während Entwickler das JDK zur Programmierung verwenden.</p>
+        </section>
+
+        <section id="jvm">
+            <h2>JVM – Virtuelle Maschine für die Ausführung von Java-Programmen</h2>
+            <p>Die Java Virtual Machine (JVM) ist eine Plattform-unabhängige virtuelle Maschine, die den Java-Bytecode
+                interpretiert und auf verschiedenen Betriebssystemen ausführt. Sie ist für die plattformübergreifende
+                Ausführung von Java-Anwendungen verantwortlich und bildet die Grundlage des "Write Once, Run
+                Anywhere"-Prinzips.</p>
+        </section>
+
+        <section id="examples">
+            <h2>Java in Aktion – Beispielprogramme</h2>
+            <p>Hier ein einfaches Java-Programm, das zeigt, wie Variablen, Bedingungen und Methoden verwendet
+                werden:</p>
+
+            <div class="code-container">
+                    <pre><code class="language-java">
+package example;
+
+public final class ExampleApplication {
+
+    // Globale Variable
+    private static final double SQUARE_ROOT = Math.sqrt(2);
+
+    public static void main(String[] args) {
+        // Dies ist ein Kommentar
+        final String text = "Dies ist ein Beispieltext";
+
+        // Lokale Variablen
+        final int a = 50;
+        final int b = 10;
+
+        if (a != b) {
+            System.out.println("A und B sind ungleich");
+        } else {
+            System.out.println("A und B sind gleich");
+        }
+    }
+}
+                    </code></pre>
+                <a href="assets/java/first.java" download>Herunterladen</a>
             </div>
 
-            <div>
-                <h2>Die Java-Technologie</h2>
-                <p>Java besteht aus mehreren wichtigen Komponenten, die zusammen die Entwicklungs- und Laufzeitumgebung
-                    ausmachen:</p>
-                <ol>
-                    <li><strong>JDK</strong> - Java Development Kit (Entwicklungswerkzeuge)</li>
-                    <li><strong>JRE</strong> - Java Runtime Environment (Laufzeitumgebung)</li>
-                    <li><strong>JVM</strong> - Java Virtual Machine (Virtuelle Maschine für Bytecode-Ausführung)</li>
-                </ol>
-
-                <h2>JDK - Das Herzstück der Java-Entwicklung</h2>
-                <p>Das Java Development Kit (JDK) ist nicht nur eine Sammlung von Entwicklungswerkzeugen, sondern auch
-                    die
-                    Grundlage für jede Java-Entwicklung. Es enthält den Compiler, Debugger, sowie zahlreiche andere
-                    Tools.</p>
-
-                <table>
-                    <tr>
-                        <th>Werkzeug</th>
-                        <th>Funktion</th>
-                        <th>Implementiert in/seit</th>
-                    </tr>
-                    <tr>
-                        <td><strong>Java Compiler (javac)</strong></td>
-                        <td>Der Compiler übersetzt Java-Code in Bytecode, der von der JVM ausgeführt wird. Dadurch
-                            können Java-Programme auf verschiedenen Plattformen ohne Änderungen ausgeführt werden.</td>
-                        <td>JDK - Version 1.0 (Fundamental)</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Java Debugger (jdb)</strong></td>
-                        <td>Das Debugging-Tool hilft Entwicklern dabei, Fehler im Code zu finden und zu beheben. Es
-                            unterstützt auch Remote-Debugging für komplexe Anwendungen.</td>
-                        <td>JDK - Version 1.3</td>
-                    </tr>
-                </table>
-
-                <h2>JRE - Laufzeitumgebung für Benutzer</h2>
-                <p>Die Java Runtime Environment (JRE) stellt die notwendige Umgebung zur Verfügung, damit Java-Anwendungen
-                    auf einem Benutzergerät ausgeführt werden können. Sie enthält die Java-Bibliotheken und die JVM, welche
-                    den Java-Bytecode in Maschinensprache umwandelt. Benutzer benötigen die JRE, um Java-Programme zu starten,
-                    während Entwickler das JDK zur Programmierung verwenden.</p>
-
-                <h2>JVM - Virtuelle Maschine für die Ausführung von Java-Programmen</h2>
-                <p>Die Java Virtual Machine (JVM) ist eine Plattform-unabhängige virtuelle Maschine, die den Java-Bytecode 
-                    interpretiert und auf verschiedenen Betriebssystemen ausführt. Sie ist für die plattformübergreifende 
-                    Ausführung von Java-Anwendungen verantwortlich und bildet die Grundlage des "Write Once, Run Anywhere"-Prinzips.</p>
-
-                <h2>Java in Aktion - Beispielprogramme</h2>
-                <p>Hier ein einfaches Java-Programm, das zeigt, wie Variablen, Bedingungen und Methoden verwendet werden:
-                </p>
-
+            <details>
+                <summary>Beispiel: Schleife von 1 bis 5</summary>
                 <div class="code-container">
-                    <pre><code class="language-java">
-    package example;
-    
-    public final class ExampleApplication {
-        
-        // Globale Variable
-        private static final double SQUARE_ROOT = Math.sqrt(2);
-    
-        public static void main(String[] args) {
-            // Dies ist ein Kommentar
-            final String text = "Dies ist ein Beispieltext";
-            
-            // Lokale Variablen
-            final int a = 50;
-            final int b = 10;
-    
-            if (a != b) {
-                System.out.println("A und B sind ungleich");
-            } else {
-                System.out.println("A und B sind gleich");
-            }
+                        <pre><code class="language-java">
+public final class LoopExample {
+
+    public static void main(String[] args) {
+        for (final int i = 1; i <= 5; i++) {
+            System.out.println("Nummer: " + i);
         }
     }
-                    </code></pre>
-                </div>
 
-                <p>Ein weiteres Beispiel zeigt eine einfache Schleife, die die Zahlen von 1 bis 5 ausgibt:</p>
+}
+                        </code></pre>
+                    <a href="assets/java/second.java" download>Herunterladen</a>
+                </div>
+            </details>
+
+            <details>
+                <summary>Beispiel: Summe zweier Zahlen</summary>
                 <div class="code-container">
-                    <pre><code class="language-java">
-    public final class LoopExample {
-        public static void main(String[] args) {
-            for (final int i = 1; i <= 5; i++) {
-                System.out.println("Nummer: " + i);
-            }
-        }
+                        <pre><code class="language-java">
+public final class SumExample {
+
+    public static int sum(final int a, final int b) {
+        return a + b;
     }
-                    </code></pre>
-                </div>
 
-                <p>Dieses Beispiel demonstriert die Verwendung einer Methode zur Berechnung der Summe zweier Zahlen:</p>
-                <div class="code-container">
-                    <pre><code class="language-java">
-    public final class SumExample {
-        public static int sum(final int a, final int b) {
-            return a + b;
-        }
-
-        public static void main(final String[] args) {
-            final int result = sum(5, 10);
-            System.out.println("Die Summe ist: " + result);
-        }
+    public static void main(final String[] args) {
+        final int result = sum(5, 10);
+        System.out.println("Die Summe ist: " + result);
     }
-                    </code></pre>
-                </div>
-            </div>
-        </div>
-    </main>
 
-    <footer>
-        <p>Copyright © 2024-2025 FlorianMichael/EnZaXD.</p>
-    </footer>
+}
+                        </code></pre>
+                    <a href="assets/java/third.java" download>Herunterladen</a>
+                </div>
+            </details>
+        </section>
+    </article>
+</main>
+
+<footer>
+    <p>Copyright © 2024-2026 Florian Reuth.</p>
+</footer>
 </body>
 
 </html>
